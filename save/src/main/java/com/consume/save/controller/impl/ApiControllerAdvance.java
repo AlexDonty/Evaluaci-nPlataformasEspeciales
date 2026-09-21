@@ -1,4 +1,4 @@
-package com.consume.save.controller;
+package com.consume.save.controller.impl;
 
 import com.consume.save.commons.exception.UnauthorizedException;
 import com.consume.save.commons.responseDto.ErrorResponse;

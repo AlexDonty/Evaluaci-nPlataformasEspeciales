@@ -1,10 +1,11 @@
-package com.consume.save.controller;
+package com.consume.save.controller.impl;
 
 
 import com.consume.save.commons.requestDto.OperationDto;
 import com.consume.save.commons.requestDto.UserDto;
 import com.consume.save.commons.responseDto.OpClientResponse;
 import com.consume.save.commons.responseDto.ResponseDto;
+import com.consume.save.controller.ApiControllerInterface;
 import com.consume.save.service.OperationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
 @CrossOrigin(origins = "http://localhost:3000")
-public class ApiController {
+public class ApiController implements ApiControllerInterface {
 
     private final OperationService operationService;
 
