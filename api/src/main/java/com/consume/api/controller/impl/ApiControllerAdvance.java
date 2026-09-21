@@ -1,6 +1,5 @@
-package com.consume.api.controller;
+package com.consume.api.controller.impl;
 
-import com.consume.api.commons.exception.ClientException;
 import com.consume.api.commons.responseDto.ErrorResponse;
 import feign.FeignException;
 import org.springframework.http.HttpStatus;
@@ -25,7 +24,7 @@ public class ApiControllerAdvance {
 
         return new ResponseEntity<>(ErrorResponse.builder()
                 .message(messages.toString())
-                .status(404)
+                .status(HttpStatus.BAD_REQUEST.value())
                 .build(), HttpStatus.BAD_REQUEST);
     }
 

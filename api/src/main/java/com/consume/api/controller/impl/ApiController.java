@@ -1,7 +1,8 @@
-package com.consume.api.controller;
+package com.consume.api.controller.impl;
 
 import com.consume.api.commons.requestDto.OperationDto;
 import com.consume.api.commons.responseDto.OpClientResponse;
+import com.consume.api.controller.ApiControllerInterface;
 import com.consume.api.service.OperationService;
 import com.consume.api.utils.AES256Utils;
 import jakarta.validation.Valid;
@@ -19,11 +20,11 @@ import java.util.Map;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
 @CrossOrigin(origins = "http://localhost:3000")
-public class ApiController {
+public class ApiController implements ApiControllerInterface {
 
     private final OperationService operationService;
 
-    @PostMapping("/operation")
+    @PostMapping( value = "/operation", consumes = "application/json", produces = "application/json")
     public ResponseEntity<OpClientResponse> operation(@Valid @RequestBody OperationDto operationDto){
         return ResponseEntity.ok(operationService.createOperation(operationDto));
     }
